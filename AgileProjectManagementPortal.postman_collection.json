@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "3b94c8a3-ea82-452a-8c22-cfc75872425a",
+		"name": "AgileProjectManagementPortal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26660690"
+	},
+	"item": [
+		{
+			"name": "Add new Project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"title\": \"Test Project\",\n    \"budget\": 15000,\n    \"startDate\": \"2023-04-18\",\n    \"expectedEndDate\": \"2024-31-11\",\n    \"status\": \"New\",\n    \"clients\": {\n        \"clientId\": 2\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/projects/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"projects",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All project details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add resources",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n    \"firstName\": \"Ashitha\",\n    \"lastName\": \"Rajeev\",\n    \"email\": \"ashi@cognizant.com\",\n    \"phoneNumber\": \"9083667890\",\n    \"role\": \"Developer\",\n    \"projects\": {\n        \"projectCode\": 5\n    }\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/projects/addresource",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"projects",
+						"addresource"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all resources",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/projects/resources",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"projects",
+						"resources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All client details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Project Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"projectCode\": 10,\n       \n        \"status\": \"InProgress\"\n        \n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/projects/10/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"projects",
+						"10",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
