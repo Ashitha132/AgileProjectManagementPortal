@@ -1,0 +1,39 @@
+
+
+<h4 class="text-center">PROJECT LIST </h4><br><br>
+<table class="table table-striped">
+    <thead class="table thead-light ">
+        <tr>
+            <th>Project Code</th>
+            <th>Title</th>
+            <th>Budget</th>
+            <th>Start Date  </th>
+            <th>Expected EndDate</th>
+            <th>Created On</th>
+            <th>Status</th>
+            <th>Last Updated On</th>
+            <th>Client</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let project of projects">
+            <td>{{project.projectCode}}</td>
+            <td>{{project.title}}</td>
+            <td>{{project.budget}}</td>
+            <td>{{project.startDate}}</td>
+            <td>{{project.expectedEndDate}}</td>
+            <td>{{project.createdOn}}</td>
+            <td>{{project.status}}</td>
+            <td>{{project.LastUpdatedOn}}</td>
+            <td>{{project.clients.name}}</td>
+            <td>
+                <button *ngIf="project.status !== 'Completed' && project.status !== 'Cancelled'"  (click)="updateProject(project.projectCode)" class="btn btn-primary" >UPDATE STATUS</button>
+            </td>
+            
+
+        </tr>
+       
+    </tbody>
+</table>

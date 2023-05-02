@@ -1,0 +1,58 @@
+<div class="col-md-6 offset-md-3"> 
+
+
+    <h4 class="text-center">Create Resource</h4>
+    <form (ngSubmit)="onSubmit()" [formGroup]="createResourceForm"> 
+    
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" id="firstName"
+           required
+           [(ngModel)]="resource.firstName" name="firstName" formControlName="firstName">
+           
+
+
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" id="lastName"
+           required
+           [(ngModel)]="resource.lastName" name="lastName" formControlName="lastName">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" id="email"
+           required placeholder="XXX@cognizant.com"
+           [(ngModel)]="resource.email" name="email" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" class="form-control" id="phoneNumber"
+           required
+           [(ngModel)]="resource.phoneNumber" name="phoneNumber" formControlName="phoneNumber">
+        </div>
+        <div class="form-group">
+          <label>Role</label>
+          <input type="text" class="form-control" id="role"
+         required [(ngModel)]="resource.role"
+        placeholder="Developer/Tester" name="role" formControlName="role">
+      </div>
+
+        
+        <div class="form-group">
+            <label for="clientId">Project</label>
+            <select class="form-control" id="projectCode" name="projectCode" formControlName="projectCode" [(ngModel)]="resource.projects" required>
+              <ng-container *ngFor="let project of projects">
+                <ng-container *ngIf="project.status !== 'Completed' && project.status !== 'Cancelled'">
+                  <option [ngValue]="project">{{project.title}}</option>
+                </ng-container>
+              </ng-container>
+            </select>
+            
+          </div>
+        <div class="form-group">
+        <button  class="btn btn-success" type="submit" >SUBMIT</button>
+    </div>
+    
+    </form>
+    </div>

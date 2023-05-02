@@ -1,0 +1,27 @@
+<div class="col-md-6 offset-md-3"> 
+
+
+    <h4 class="text-center">Update Status</h4>
+    <form  (ngSubmit)="onSubmit()"  > 
+    
+    
+        
+        
+        <div class="form-group">
+            <label>Project Status</label>
+        <select id="status" name="status" class="form-control"  [(ngModel)]="selectedValue"   >
+            <option value="New">New</option>
+            <option value="InProgress">In Progress</option>
+            <option value="Completed">Completed</option>
+            <option value="Delayed">Delayed</option>
+            <option value="Cancelled">Cancelled</option>
+    
+          </select>
+          </div>
+     
+        <div class="form-group">
+        <button  class="btn btn-success" type="submit" >SUBMIT</button>
+    </div>
+    
+    </form>
+    </div>
